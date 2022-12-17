@@ -42,7 +42,7 @@ onMounted(() => {
     themeService = ThemeServiceInit({
       ...THEME_MAP
     }, userCustomTheme)
-    currentTheme.value = themeService
+    currentTheme.value = themeService.currentTheme.id
   })
 })
 
@@ -86,6 +86,8 @@ const switchLang = () => {
 
       <NavBarTitle />
 
+      <slot name="search" />
+
       <div class="flex-grow" />
 
       <div class="flex items-center">
@@ -115,8 +117,6 @@ const switchLang = () => {
           </a>
         </div>
       </div>
-
-      <slot name="search" />
     </div>
   </header>
 </template>
